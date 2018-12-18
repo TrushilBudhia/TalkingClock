@@ -4,9 +4,9 @@ function parseTime(time) {
   // ['02', '45'].map(Number) = [2, 45]   // integer
 
   const timeSplit = time.split(':').map(Number)
-  const hours = timeSplit[0] > 12 ? timeSplit[0] - 12 : timeSplit[0]
+  const hours = timeSplit[0] > 12 ? timeSplit[0] - 12 : timeSplit[0] === 0 ? 12 : timeSplit[0]
   const minutes = timeSplit[1] === 0 ? 60 : timeSplit[1]
-  const ampm = timeSplit[0] <= 12 ? 'am' : 'pm'
+  const ampm = timeSplit[0] >= 12 ? 'pm' : 'am'
   return { hours, minutes, ampm }
 }
 
