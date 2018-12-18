@@ -36,6 +36,6 @@ function renderTime() {
 
 setInterval(function () {
   renderTime()
-},1000);
+},1000)
 
 renderTime()
